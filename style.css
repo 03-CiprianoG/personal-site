@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Gayathri&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.preloading {
+  overflow-y: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Merriweather", sans-serif;
+  scroll-behavior: smooth;
+  background-color: rgb(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero {
+  overflow-y: hidden;
+  background-image: url(./img/Basel.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 0;
+  animation: app 1s ease forwards 5.5s;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+#hero h1 {
+  color: white;
+  opacity: 0;
+  animation: app 1s ease forwards 7s;
+  display: block;
+  width: fit-content;
+  font-size: 5rem;
+  position: relative;
+}
+
+#hero h2 {
+  color: white;
+  opacity: 0;
+  animation: app2 1s ease forwards 7.5s;
+  display: block;
+  width: fit-content;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+  position: relative;
+}
+
+#hero .cta {
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  background-color: transparent;
+  animation: app 1s ease forwards 8s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  background-size: 10px;
+  opacity: 0;
+}
+
+#hero .cta img {
+  width: 30px;
+  height: 30px;
+  animation: app 1s ease forwards;
+  opacity: 0;
+}
+
+#hero .cta img:hover {
+  animation: disapp2 0.5s ease forwards;
+}
+
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 1000;
+}
+
+#header .header {
+  min-height: 6vh;
+}
+
+#header .nav-bar {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+
+#header .nav-list ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  position: relative;
+  animation: app 1s ease forwards 6.5s;
+  opacity: 0;
+}
+
+#header .nav-list ul a {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  padding: 20px;
+  display: block;
+  text-transform: uppercase;
+}
+
+#header .nav-list ul a:hover {
+  animation: disapp2 0.5s ease forwards;
+}
+
+.brand a img {
+  width: 30%;
+  height: 50%;
+  animation: app 1s ease forwards 6s;
+  opacity: 0;
+  position: relative;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit (1300px, 3));
+  grid-gap: 2rem;
+  position: absolute;
+  margin: 100px 100px;
+  width: 40vw;
+  height: 80vh;
+}
+
+.img-container {
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.img-container img:hover {
+  transform: scale(1.2);
+}
+
+.descr {
+  display: block;
+  position: absolute;
+  margin: 150px 750px;
+  width: 40vw;
+  height: 70vh;
+}
+
+.descr p {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  opacity: 0;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  max-inline-size: 500px;
+}
+
+.hovered {
+  animation: app 1s ease forwards;
+}
+
+.sudime {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  column-width: 3rem;
+}
+
+.sudime p {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  max-inline-size: 300px;
+  margin-top: 10%;
+  margin-left: 5%;
+  font-family: "Poppins", sans-serif;
+}
+
+.sudime ul {
+  text-align: center;
+  max-inline-size: 300px;
+  font-size: 1.5rem;
+  margin-top: 10%;
+}
+
+.sudime li {
+  color: white;
+}
+
+.sudime img {
+  width: 30rem;
+  height: 30rem;
+  align-self: center;
+  margin-top: -50rem;
+}
+
+#purpose {
+  align-items: center;
+  background-color: transparent;
+  width: 75%;
+  margin-left: 12.5%;
+  border: none;
+  height: 100%;
+}
+
+#form-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: serif;
+  margin-top: 65%;
+}
+
+#form-section h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+#form-section h2 {
+  font-size: 14px;
+  text-align: center;
+  margin: -35px;
+  text-decoration-style: none;
+  text-align: center;
+  max-inline-size: 420px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.submit-btn {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  background: transparent;
+}
+
+.submit-btn:hover {
+  animation: disapp2 0.5s ease forwards;
+}
+
+.form {
+  width: 50%;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+}
+
+.form textarea {
+  color: white;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+  background: inherit;
+  color: white;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid white;
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #6c4c81;
+  transform: translateX(-100%);
+  transition: all 0.6 ease;
+}
+
+#arrow-submit {
+  background-color: transparent;
+  width: 100%;
+}
+
+#arrow-submit:hover {
+  animation: disapp2 0.5s ease forwards;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  color: white;
+  transition: all 0.6 ease;
+}
+
+/*Animiamo lo span quando clicchiamo l'input*/
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  transition-duration: 0.6s;
+  font-size: 14px;
+  color: #6c4c81;
+}
+
+/*Fa rimenere al suo posto l'animazione mentre l'input è ancora attivo*/
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%);
+}
+
+.submit-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: all 0.6s ease;
+}
+
+.submit-btn::selection {
+  transform: translateX(-100%);
+  transition: trans-btn all 0.6 ease;
+}
+
+.social-container {
+  display: flex;
+  width: 50px;
+  justify-content: space-around;
+  margin-left: 185px;
+  margin-top: -30px;
+}
+
+.social {
+  color: white;
+  background-color: transparent;
+  list-style: none;
+  opacity: 0;
+  animation: app 1s ease 8.5s forwards;
+}
+
+.social img:hover {
+  animation: disapp2 0.5s ease forwards;
+}
+
+.social img {
+  padding: 3rem;
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+  justify-items: space-between;
+  display: flex;
+}
+
+footer a {
+  margin-left: 288px;
+}
+
+footer a img {
+  width: 24px;
+  margin: 10px;
+}
+
+#logo {
+  position: absolute;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fill 0.5s ease forwards 4s, disapp 1s ease forwards 5s;
+}
+
+#logo path:nth-child(1) {
+  stroke-dasharray: 385.92596435546875;
+  stroke-dashoffset: 385.92596435546875;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+#logo path:nth-child(2) {
+  stroke-dasharray: 213.65838623046875;
+  stroke-dashoffset: 213.65838623046875;
+  animation: line-anim 2s ease forwards 0.5s;
+}
+#logo path:nth-child(3) {
+  stroke-dasharray: 363.6739807128906;
+  stroke-dashoffset: 363.6739807128906;
+  animation: line-anim 2s ease forwards 0.7s;
+}
+#logo path:nth-child(4) {
+  stroke-dasharray: 447.3274841308594;
+  stroke-dashoffset: 447.3274841308594;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+#logo path:nth-child(5) {
+  stroke-dasharray: 213.65843200683594;
+  stroke-dashoffset: 213.65843200683594;
+  animation: line-anim 2s ease forwards 1.1s;
+}
+#logo path:nth-child(6) {
+  stroke-dasharray: 384.4840393066406;
+  stroke-dashoffset: 384.4840393066406;
+  animation: line-anim 2s ease forwards 1.3s;
+}
+#logo path:nth-child(7) {
+  stroke-dasharray: 494.43585205078125;
+  stroke-dashoffset: 494.43585205078125;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+#logo path:nth-child(8) {
+  stroke-dasharray: 400.18939208984375;
+  stroke-dashoffset: 400.18939208984375;
+  animation: line-anim 2s ease forwards 1.7s;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: white;
+  }
+}
+@keyframes disapp {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes disapp2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes app {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes app2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes popUp {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes trans-btn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
